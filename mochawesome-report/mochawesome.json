@@ -1,0 +1,275 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-13T08:22:43.512Z",
+    "end": "2025-02-13T08:22:46.578Z",
+    "duration": 3066,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6415ed4a-760b-48e8-aec3-be11126d3ba4",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d3d80a25-4739-42a3-93f5-c34689f6a6c7",
+          "title": "Create User",
+          "fullFile": "D:\\Productive\\Bootcamp DigitalSkola\\APIautomation\\test\\automation\\createUser.js",
+          "file": "\\test\\automation\\createUser.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create user should be success",
+              "fullTitle": "Create User Create user should be success",
+              "timedOut": false,
+              "duration": 1535,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(10000)\nconst url = 'https://reqres.in/api/users'\nconst requestData = {\n        \"name\": \"Jihan\",\n        \"job\": \"Nabila\",\n        \"id\": \"95\",\n        \"createdAt\": \"2025-02-13T05:52:02.299Z\"\n};\nconst response = await fetch(url, {\n    method: \"POST\",\n    headers: {\n        \"Content-Type\": \"application/json\"\n    },\n    body: JSON.stringify(requestData)\n});\nconst dataResponse = await response.json()\nassert.strictEqual(response.status, 201)\nassert.strictEqual(requestData.name, \"Jihan\")\n// console.log(\"User created successfully.\")\n// console.log(\"Response API: \" + JSON.stringify(dataResponse, null, 1))",
+              "err": {},
+              "uuid": "fafba9e8-3dd7-4363-95cd-8be12261705b",
+              "parentUUID": "d3d80a25-4739-42a3-93f5-c34689f6a6c7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fafba9e8-3dd7-4363-95cd-8be12261705b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1535,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a6fef6fc-b6a1-4ef5-ae4e-02af2e88168d",
+          "title": "Delete User",
+          "fullFile": "D:\\Productive\\Bootcamp DigitalSkola\\APIautomation\\test\\automation\\deleteUser.js",
+          "file": "\\test\\automation\\deleteUser.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete user should be success",
+              "fullTitle": "Delete User Delete user should be success",
+              "timedOut": false,
+              "duration": 499,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(10000)\nconst userId = 95\nconst url = 'https://reqres.in/api/users/${userId}'\nconst response = await fetch(url, {\n    method: \"DELETE\"\n});\nassert.strictEqual(response.status, 204)\n// console.log(\"User deleted successfully.\")",
+              "err": {},
+              "uuid": "928b6f85-c94a-485f-9b2e-b3f731cb9f02",
+              "parentUUID": "a6fef6fc-b6a1-4ef5-ae4e-02af2e88168d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "928b6f85-c94a-485f-9b2e-b3f731cb9f02"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 499,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "6f8fb910-953a-4084-9411-47689523cd79",
+          "title": "Get Single User",
+          "fullFile": "D:\\Productive\\Bootcamp DigitalSkola\\APIautomation\\test\\automation\\getSingleUser.js",
+          "file": "\\test\\automation\\getSingleUser.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get single user should be success",
+              "fullTitle": "Get Single User Get single user should be success",
+              "timedOut": false,
+              "duration": 32,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst response = await fetch('https://reqres.in/api/users/2')\nconst dataResponse = await response.json()\nassert.strictEqual(response.status, 200)\nassert.strictEqual(dataResponse.data.first_name, 'Janet')\n// console.log(\"Response API: \" + JSON.stringify(dataResponse, null, 1));",
+              "err": {},
+              "uuid": "76d4f320-c946-4dea-857b-e643d3d17000",
+              "parentUUID": "6f8fb910-953a-4084-9411-47689523cd79",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get invalid user should be error",
+              "fullTitle": "Get Single User Get invalid user should be error",
+              "timedOut": false,
+              "duration": 475,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst response = await fetch('https://reqres.in/api/users/5000')\nassert.strictEqual(response.status, 404)",
+              "err": {},
+              "uuid": "cb25dfb7-3473-40b3-acdf-3fc64c4a6dbf",
+              "parentUUID": "6f8fb910-953a-4084-9411-47689523cd79",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "76d4f320-c946-4dea-857b-e643d3d17000",
+            "cb25dfb7-3473-40b3-acdf-3fc64c4a6dbf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 507,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "56bb5dd9-e43b-4554-aac9-88ad4ea6c69c",
+          "title": "Get Single User",
+          "fullFile": "D:\\Productive\\Bootcamp DigitalSkola\\APIautomation\\test\\automation\\jsonschema.js",
+          "file": "\\test\\automation\\jsonschema.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get single user should be success",
+              "fullTitle": "Get Single User Get single user should be success",
+              "timedOut": false,
+              "duration": 83,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(5000)\nconst response = await fetch('https://reqres.in/api/users/2')\nconst data = await response.json()\nconst validate = ajv.compile(schema);\nconst valid = validate(data);\nif (!valid) {\n    console.log(validate.errors);\n}\n// console.log(\"test: \" + JSON.stringify(data, null, 1))\nassert.ok(valid, \"Response JSON harus sesuai dengan schema\");",
+              "err": {},
+              "uuid": "c619b54b-1efc-4e2a-a449-20a935c70d9d",
+              "parentUUID": "56bb5dd9-e43b-4554-aac9-88ad4ea6c69c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c619b54b-1efc-4e2a-a449-20a935c70d9d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 83,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "841f4403-b1cb-499c-bfc6-e12a6e6e36e2",
+          "title": "Update User",
+          "fullFile": "D:\\Productive\\Bootcamp DigitalSkola\\APIautomation\\test\\automation\\updateUser.js",
+          "file": "\\test\\automation\\updateUser.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Update user should be success",
+              "fullTitle": "Update User Update user should be success",
+              "timedOut": false,
+              "duration": 425,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "this.timeout(10000)\nconst url = 'https://reqres.in/api/users/2'\nconst requestData = {\n        \"name\": \"Nabila\",\n        \"job\": \"QA\",\n        \"updatedAt\": \"2025-02-13T05:57:20.058Z\"\n};\nconst response = await fetch(url, {\n    method: \"PATCH\",\n    headers: {\n        \"Content-Type\": \"application/json\"\n    },\n    body: JSON.stringify(requestData)\n});\nconst dataResponse = await response.json();\nassert.strictEqual(response.status, 200);\nassert.strictEqual(requestData.name, \"Nabila\");\n// console.log(\"User updated successfully.\")\n// console.log(\"Response API: \" + JSON.stringify(dataResponse, null, 1));",
+              "err": {},
+              "uuid": "5099a11f-9682-46f7-a4fc-c30b3407cc79",
+              "parentUUID": "841f4403-b1cb-499c-bfc6-e12a6e6e36e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5099a11f-9682-46f7-a4fc-c30b3407cc79"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 425,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
